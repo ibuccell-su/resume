@@ -1,0 +1,82 @@
+h1{
+    font-family: 'Cinzel', serif, regular;
+
+}
+ 
+.carousel-control {
+    opacity:100;
+}
+
+#iz:hover{ 
+    color: blue; 
+}
+
+.container{ 
+
+}
+
+.nav-item a {
+
+    position: relative;
+
+}
+
+.nav-item a::after { 
+    content: "";
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: #292b2c;
+    position: absolute;
+    Left: 0;
+    bottom: 1px;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: 1s;
+}
+
+.nav-item a:hover::after{
+    transform: scaleX(1);
+}
+
+.multi-item-carousel{
+    .carousel-inner{
+      > .item{
+        transition: 500ms ease-in-out left;
+      }
+      .active{
+        &.left{
+          left:-33%;
+        }
+        &.right{
+          left:33%;
+        }
+      }
+      .next{
+        left: 33%;
+      }
+      .prev{
+        left: -33%;
+      }
+      @media all and (transform-3d), (-webkit-transform-3d) {
+        > .item{
+          // use your favourite prefixer here
+          transition: 500ms ease-in-out left;
+          transition: 500ms ease-in-out all;
+          backface-visibility: visible;
+          transform: none!important;
+        }
+      }
+    }
+    .carouse-control{
+      &.left, &.right{
+        background-image: none;
+      }
+    }
+  }
+  
+.img-responsive { 
+    width: auto; 
+    height: 400px;
+    justify-content: inherit;
+}
